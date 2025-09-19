@@ -1,14 +1,13 @@
 import axios, { AxiosError, AxiosResponse } from 'axios';
-import { toast } from 'react-hot-toast';    
-
+import { toast } from 'react-hot-toast';
 
 // Create an axios instance with default config
 const api = axios.create({
-  baseURL: process.env.REACT_APP_API_URL || 'http://localhost:8000/api',
-  headers: {
-    'Content-Type': 'application/json',
-  },
-});
+    baseURL: process.env.REACT_APP_API_URL || 'http://localhost:8000/api/v1',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
 
 // Request interceptor to add auth token to requests
 api.interceptors.request.use(
@@ -65,12 +64,22 @@ api.interceptors.response.use(
 
 // API methods
 export const auth = {
-  login: (email: string, password: string) =>
-    api.post('/auth/login', { username: email, password }),
-  signup: (data: { name: string; email: string; password: string; role: string }) =>
-    api.post('/auth/signup', data),
-  getMe: () => api.get('/auth/me'),
-};
+    login: (email: string, password: string) => {
+      const formData = new URLSearchParams();
+      formData.append('username', email);
+      formData.append('password', password);
+  
+      return api.post('/auth/login', formData, {
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+      });
+    },
+    signup: (data: { name: string; email: string; password: string; role: string }) =>
+      api.post('/auth/signup', data),
+    getMe: () => api.get('/auth/me'),
+  };
+
 
 export const events = {
   getAll: (params?: any) => api.get('/events', { params }),

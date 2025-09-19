@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useQuery, useQueryClient } from '@tanstack/react-query';
-import { User } from '../types';
+import { User } from '../types/index';
 import api from '../utils/api';
 
 type AuthContextType = {

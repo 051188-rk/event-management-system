@@ -6,7 +6,7 @@ import { format, parseISO } from 'date-fns';
 import { Calendar as CalendarIcon, Clock, Image as ImageIcon, X } from 'lucide-react';
 import { toast } from 'react-hot-toast';
 
-import { Event } from '../../types';
+import { Event } from '../../types/index';
 import api, { events } from '../../utils/api';
 import FormInput from '../form/FormInput';
 import FormTextarea from '../form/FormTextarea';
@@ -179,7 +179,7 @@ const EventForm: React.FC<EventFormProps> = ({ event, onSuccess, onCancel }) => 
       } else {
         // No image to upload, just update/create the event
         if (event?.id) {
-          response = await events.update(event.id, payload);
+          response = await events.update(event.id.toString(), payload);
         } else {
           response = await events.create(payload);
         }

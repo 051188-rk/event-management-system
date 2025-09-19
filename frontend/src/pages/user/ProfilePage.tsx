@@ -3,7 +3,7 @@ import { useForm, SubmitHandler } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { useAuth } from '../../contexts/AuthContext';
-import { User } from '../../types';
+import { User } from '../../types/index';
 import FormInput from '../../components/form/FormInput';
 import Button from '../../components/ui/Button';
 import { toast } from 'react-hot-toast';

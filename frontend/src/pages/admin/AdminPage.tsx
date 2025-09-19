@@ -4,7 +4,7 @@ import { useQuery, useMutation, useQueryClient, UseMutationOptions } from '@tans
 import { Trash2, Edit, Plus, Users, Calendar, UserPlus } from 'lucide-react';
 
 import { users as usersApi, events as eventsApi } from '../../utils/api';
-import { Event, User } from '../../types';
+import { Event, User } from '../../types/index';
 import Button from '../../components/ui/Button';
 import LoadingSpinner from '../../components/ui/LoadingSpinner';
 import ErrorMessage from '../../components/ui/ErrorMessage';
@@ -271,7 +271,7 @@ const AdminPage: React.FC = () => {
                                                                     {user.role}
                                                                 </span>
                                                                 <span className="ml-2">
-                                                                    Member since {new Date(user.createdAt || '').toLocaleDateString()}
+                                                                Member since {new Date(user.created_at || '').toLocaleDateString()}
                                                                 </span>
                                                             </div>
                                                         </div>

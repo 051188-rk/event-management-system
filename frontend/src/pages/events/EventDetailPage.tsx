@@ -9,7 +9,7 @@ import Button from '../../components/ui/Button';
 import LoadingSpinner from '../../components/ui/LoadingSpinner';
 import ErrorMessage from '../../components/ui/ErrorMessage';
 import { useAuth } from '../../contexts/AuthContext';
-import { Event } from '../../types';
+import { Event } from '../../types/index';
 
 const EventDetailPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { toast } from 'react-hot-toast';
-import { User } from '../../types';
+import { User } from '../../types/index';
 
 import UserForm from '../../components/admin/UserForm';
 import { useAuth } from '../../contexts/AuthContext';

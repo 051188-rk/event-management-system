@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { toast } from 'react-hot-toast';
-import { Event } from '../../types';
+import { Event } from '../../types/index';
 
 import EventForm from '../../components/events/EventForm';
 import { useAuth } from '../../contexts/AuthContext';

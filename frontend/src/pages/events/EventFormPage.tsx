@@ -5,7 +5,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { toast } from 'react-hot-toast';
-import { Event } from '../../types';
+import { Event } from '../../types/index';
 import { events } from '../../utils/api';
 import FormInput from '../../components/form/FormInput';
 import FormTextarea from '../../components/form/FormTextarea';

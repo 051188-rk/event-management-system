@@ -4,7 +4,7 @@ import { useQuery } from '@tanstack/react-query';
 import { format, parseISO } from 'date-fns';
 import { Calendar, Clock, Plus } from 'lucide-react';
 
-import { Event } from '../../types';
+import { Event } from '../../types/index';
 import { events } from '../../utils/api';
 import Button from '../../components/ui/Button';
 import EventFilters from '../../components/events/EventFilters';
